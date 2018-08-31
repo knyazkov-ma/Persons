@@ -162,6 +162,10 @@
       <Project>{75335959-e273-49f1-9da7-fc20c67baffd}</Project>
       <Name>Persons.Abstractions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Persons.Logging\Persons.Logging.csproj">
+      <Project>{c54440e0-0426-44d8-b824-e5cf5d001e02}</Project>
+      <Name>Persons.Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

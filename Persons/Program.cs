@@ -1,4 +1,5 @@
 using Nancy.Hosting.Self;
+using Serilog;
 using System;
 
 namespace Persons
@@ -7,6 +8,11 @@ namespace Persons
 	{
 		static void Main(string[] args)
 		{
+			var log = new LoggerConfiguration()
+				.WriteTo.Console()
+				.CreateLogger();
+			Log.Logger = log;
+
 			HostConfiguration hostConfigs = new HostConfiguration();
 			hostConfigs.UrlReservations.CreateAutomatically = true;
 

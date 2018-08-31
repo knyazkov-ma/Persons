@@ -3,11 +3,14 @@ using Nancy.ModelBinding;
 using Persons.Abstractions.Commands;
 using Persons.Abstractions.Commands.Parameters;
 using Persons.Models;
+using Serilog;
 
 namespace Persons.Modules
 {
 	public class CreatePersonModule : NancyModule
 	{
+		//private static readonly ILog Logger = LogProvider.For<CreatePersonModule>();
+
 		private readonly ICreatePersonCommand _createPersonCommand;
 
 		public CreatePersonModule(ICreatePersonCommand createPersonCommand)
@@ -17,6 +20,7 @@ namespace Persons.Modules
 
 			Post["/"] = parameters =>
 			{
+
 				var createPersonModel = this.Bind<CreatePersonModel>();
 				if (!createPersonModel.BirthDate.HasValue)
 					return HttpStatusCode.BadRequest;
