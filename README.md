@@ -1,4 +1,4 @@
 ﻿# Persons
-Тестовое задание
+VS 2017, PostgreeSQL
 
 
