@@ -19,7 +19,7 @@ namespace Persons.Service.Modules
 
 			Get["/{id:guid}"] = parameters =>
 			{
-				var result = _queryHandler.Handle(parameters.id, _personQuery);
+				var result = _queryHandler.Handle<Guid, PersonDto, IQuery<Guid, PersonDto>>(parameters.id, _personQuery);
 				if(result == null)
 					return HttpStatusCode.NoContent;
 
