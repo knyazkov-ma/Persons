@@ -9,17 +9,17 @@ namespace Persons.Service.Modules
 	public class QueryPersonModule : NancyModule
 	{
 		private readonly IQuery<Guid, PersonDto> _personQuery;
-		private readonly IQueryHanler _queryHanler;
+		private readonly IQueryHandler _queryHandler;
 		public QueryPersonModule(IQuery<Guid, PersonDto> personQuery,
-			IQueryHanler queryHanler)
+			IQueryHandler queryHandler)
 			: base("/api/v1/persons")
 		{
 			_personQuery = personQuery;
-			_queryHanler = queryHanler;			
+			_queryHandler = queryHandler;			
 
 			Get["/{id:guid}"] = parameters =>
 			{
-				var result = _queryHanler.Handle(parameters.id, _personQuery);
+				var result = _queryHandler.Handle(parameters.id, _personQuery);
 				if(result == null)
 					return HttpStatusCode.NoContent;
 

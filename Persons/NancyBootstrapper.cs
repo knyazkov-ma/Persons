@@ -40,7 +40,7 @@ namespace Persons.Service
 
 			container.Register<IPersonRepository, PersonRepository>().AsSingleton();
 
-			container.Register<IQueryHanler, QueryHandler>().AsSingleton();
+			container.Register<IQueryHandler, QueryHandler>().AsSingleton();
 			container.Register<ICommandHandler, CommandHandler>().AsSingleton();
 
 			container.Register<ICommand<CreatePersonParameter, CreatePersonResult>, CreatePersonCommand>().AsSingleton();
