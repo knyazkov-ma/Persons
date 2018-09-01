@@ -1,7 +1,7 @@
-﻿using Persons.Service.Entities;
+﻿using Persons.Entities;
 using System;
 
-namespace Persons.Service.Repositories.Interfaces
+namespace Persons.Repositories.Interfaces
 {
 	public interface IPersonRepository
 	{

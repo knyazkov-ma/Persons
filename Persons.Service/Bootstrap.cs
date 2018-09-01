@@ -1,8 +1,8 @@
-﻿using Persons.Service.Entities;
-using Persons.Service.Migrations.Core;
+﻿using Persons.Entities;
+using Persons.Migrations.Core;
 using Z.Dapper.Plus;
 
-namespace Persons.Service
+namespace Persons
 {
 	public static class Bootstrap
 	{

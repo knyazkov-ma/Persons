@@ -1,12 +1,12 @@
 ﻿using Dapper;
-using Persons.Service.Entities;
-using Persons.Service.Repositories.Interfaces;
+using Persons.Entities;
+using Persons.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using Z.Dapper.Plus;
 
-namespace Persons.Service.Repositories
+namespace Persons.Repositories
 {
 	public class PersonRepository: IPersonRepository
 	{

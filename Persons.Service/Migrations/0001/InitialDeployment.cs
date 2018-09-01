@@ -1,7 +1,7 @@
 ﻿using FluentMigrator;
 using System;
 
-namespace Persons.Service.Migrations
+namespace Persons.Migrations
 {
     [Migration(20180831200000, "InitialDeployment")]
     public class InitialDeployment : ForwardOnlyMigration

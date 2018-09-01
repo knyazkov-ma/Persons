@@ -66,8 +66,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Topshelf.4.0.4\lib\net452\Topshelf.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigureService.cs" />
+    <Compile Include="HostService.cs" />
     <Compile Include="Models\CreatePersonModel.cs" />
     <Compile Include="Modules\QueryPersonModule.cs" />
     <Compile Include="Modules\CreatePersonModule.cs" />
@@ -84,9 +89,9 @@
       <Project>{75335959-e273-49f1-9da7-fc20c67baffd}</Project>
       <Name>Persons.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Persons.Service\Persons.Service.csproj">
+    <ProjectReference Include="..\Persons.Service\Persons.csproj">
       <Project>{6af25096-1c75-49da-aefd-8dc46c0427d8}</Project>
-      <Name>Persons.Service</Name>
+      <Name>Persons</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

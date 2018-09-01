@@ -1,4 +1,4 @@
-﻿namespace Persons.Service.Entities
+﻿namespace Persons.Entities
 {
 	public abstract class BaseEntity<TKey> where TKey: struct
 	{

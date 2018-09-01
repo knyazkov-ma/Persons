@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Persons.Models
+namespace Persons.Service.Models
 {
 	public class CreatePersonModel
 	{

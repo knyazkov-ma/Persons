@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Persons.Service.Entities
+namespace Persons.Entities
 {
 	public class Person: BaseEntity<Guid>
 	{

@@ -1,9 +1,9 @@
 ﻿using Persons.Abstractions.Queries;
 using Persons.Abstractions.Queries.Dto;
-using Persons.Service.Repositories.Interfaces;
+using Persons.Repositories.Interfaces;
 using System;
 
-namespace Persons.Service.Queries
+namespace Persons.Queries
 {
 	public class PersonQuery : IQuery<Guid, PersonDto>
 	{

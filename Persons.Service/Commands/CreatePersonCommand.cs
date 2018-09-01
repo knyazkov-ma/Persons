@@ -1,14 +1,13 @@
 ﻿using Persons.Abstractions.Commands;
 using Persons.Abstractions.Commands.Parameters;
-using Persons.Logging;
-using Persons.Service.Entities;
-using Persons.Service.Repositories.Interfaces;
+using Persons.Entities;
+using Persons.Repositories.Interfaces;
 
-namespace Persons.Service.Commands
+namespace Persons.Commands
 {
-	public class CreatePersonCommand : ICreatePersonCommand
+	public class CreatePersonCommand : ICommand<CreatePersonParameter, CreatePersonResult>
 	{
-		private static readonly ILog Logger = LogProvider.GetCurrentClassLogger();
+		
 		private readonly IPersonRepository _personRepository;
 		public CreatePersonCommand(IPersonRepository personRepository)
 		{
@@ -17,11 +16,6 @@ namespace Persons.Service.Commands
 
 		public CreatePersonResult Run(CreatePersonParameter param)
 		{
-			Logger.Log(LogLevel.Info, () => 
-			{
-				return $"CreatePersonCommand: BirthDate={param.BirthDate.ToShortDateString()}, Name={param.Name}";
-			});
-
 			var entity = Person.Create(param.BirthDate, param.Name);
 
 			if (entity == null)

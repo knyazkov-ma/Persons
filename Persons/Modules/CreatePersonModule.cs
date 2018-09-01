@@ -1,22 +1,24 @@
 ﻿using Nancy;
 using Nancy.ModelBinding;
+using Persons.Abstractions.CommandHandlers;
 using Persons.Abstractions.Commands;
 using Persons.Abstractions.Commands.Parameters;
-using Persons.Models;
-using Serilog;
+using Persons.Service.Models;
 
-namespace Persons.Modules
+namespace Persons.Service.Modules
 {
 	public class CreatePersonModule : NancyModule
 	{
-		//private static readonly ILog Logger = LogProvider.For<CreatePersonModule>();
+		private readonly ICommand<CreatePersonParameter, CreatePersonResult> _createPersonCommand;
+		private readonly ICommandHandler _commandHandler;
 
-		private readonly ICreatePersonCommand _createPersonCommand;
-
-		public CreatePersonModule(ICreatePersonCommand createPersonCommand)
+		public CreatePersonModule(
+			ICommand<CreatePersonParameter, CreatePersonResult> createPersonCommand,
+			ICommandHandler commandHandler)
 			: base("/api/v1/persons")
 		{
 			_createPersonCommand = createPersonCommand;
+			_commandHandler = commandHandler;
 
 			Post["/"] = parameters =>
 			{
@@ -25,11 +27,12 @@ namespace Persons.Modules
 				if (!createPersonModel.BirthDate.HasValue)
 					return HttpStatusCode.BadRequest;
 
-				var result = createPersonCommand.Run(new CreatePersonParameter
+				var param = new CreatePersonParameter
 				{
 					BirthDate = createPersonModel.BirthDate.Value,
 					Name = createPersonModel.Name
-				});
+				};
+				var result = _commandHandler.Handle<CreatePersonParameter, CreatePersonResult, ICommand<CreatePersonParameter, CreatePersonResult>>(param, _createPersonCommand);
 
 				if (result.Type ==  CreatePersonResultType.UncorrectEntity)
 					return HttpStatusCode.UnprocessableEntity;

@@ -2,7 +2,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Persons.Service.Migrations.Core
+namespace Persons.Migrations.Core
 {
 	public class MigrationRunner
     {
