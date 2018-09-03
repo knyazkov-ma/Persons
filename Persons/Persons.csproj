@@ -157,8 +157,8 @@
     <Compile Include="Commands\Parameters\CreatePersonResult.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Person.cs" />
-    <Compile Include="Mappings\DbMappings.cs" />
-    <Compile Include="Mappings\DtoMappings.cs" />
+    <Compile Include="Mappings\DbEntityMappings.cs" />
+    <Compile Include="Mappings\EntityDtoMappings.cs" />
     <Compile Include="Migrations\0001\InitialDeployment.cs" />
     <Compile Include="Migrations\Core\MigrationRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,7 +4,7 @@ using Persons.Queries.Dto;
 
 namespace Persons.Mappings
 {
-	public static class DtoMappings
+	public static class EntityDtoMappings
 	{
 		public static void Configure()
 		{

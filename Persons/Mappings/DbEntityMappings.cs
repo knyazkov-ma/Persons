@@ -3,7 +3,7 @@ using Z.Dapper.Plus;
 
 namespace Persons.Mappings
 {
-	public static class DbMappings
+	public static class DbEntityMappings
 	{
 		public static void Configure()
 		{

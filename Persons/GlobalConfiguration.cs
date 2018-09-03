@@ -10,8 +10,8 @@ namespace Persons
 			var migrationRunner = new MigrationRunner(connectionString);
 			migrationRunner.Update();
 
-			DbMappings.Configure();
-			DtoMappings.Configure();
+			DbEntityMappings.Configure();
+			EntityDtoMappings.Configure();
 		}
 	}
 }
