@@ -1,5 +1,5 @@
 ﻿using Persons.Abstractions.Commands;
-using Persons.Abstractions.Commands.Parameters;
+using Persons.Commands.Parameters;
 using Persons.Entities;
 using Persons.Repositories.Interfaces;
 

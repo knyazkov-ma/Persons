@@ -2,7 +2,7 @@
 using Nancy.ModelBinding;
 using Persons.Abstractions.CommandHandlers;
 using Persons.Abstractions.Commands;
-using Persons.Abstractions.Commands.Parameters;
+using Persons.Commands.Parameters;
 using Persons.Service.Models;
 
 namespace Persons.Service.Modules

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Persons.Abstractions.Queries.Dto
+namespace Persons.Queries.Dto
 {
 	public class PersonDto
 	{

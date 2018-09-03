@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6AF25096-1C75-49DA-AEFD-8DC46C0427D8}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Persons.Service</RootNamespace>
-    <AssemblyName>Persons.Service</AssemblyName>
+    <RootNamespace>Persons</RootNamespace>
+    <AssemblyName>Persons</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -149,11 +149,14 @@
     <Compile Include="Bootstrap.cs" />
     <Compile Include="CommandHandlers\CommandHandler.cs" />
     <Compile Include="Commands\CreatePersonCommand.cs" />
+    <Compile Include="Commands\Parameters\CreatePersonParameter.cs" />
+    <Compile Include="Commands\Parameters\CreatePersonResult.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Migrations\0001\InitialDeployment.cs" />
     <Compile Include="Migrations\Core\MigrationRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\Dto\PersonDto.cs" />
     <Compile Include="Queries\PersonQuery.cs" />
     <Compile Include="QueryHandlers\QueryHandler.cs" />
     <Compile Include="Repositories\Interfaces\IPersonRepository.cs" />

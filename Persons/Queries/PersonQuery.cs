@@ -1,5 +1,5 @@
 ﻿using Persons.Abstractions.Queries;
-using Persons.Abstractions.Queries.Dto;
+using Persons.Queries.Dto;
 using Persons.Repositories.Interfaces;
 using System;
 

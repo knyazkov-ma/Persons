@@ -1,6 +1,6 @@
 ﻿using Nancy;
 using Persons.Abstractions.Queries;
-using Persons.Abstractions.Queries.Dto;
+using Persons.Queries.Dto;
 using Persons.Abstractions.QueryHandlers;
 using System;
 

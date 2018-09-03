@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Persons.Abstractions.Commands.Parameters
+namespace Persons.Commands.Parameters
 {
 	public class CreatePersonParameter
 	{
