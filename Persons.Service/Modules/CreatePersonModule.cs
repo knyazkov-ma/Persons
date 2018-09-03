@@ -4,6 +4,7 @@ using Persons.Abstractions.CommandHandlers;
 using Persons.Abstractions.Commands;
 using Persons.Commands.Parameters;
 using Persons.Service.Models;
+using System;
 
 namespace Persons.Service.Modules
 {
@@ -24,12 +25,12 @@ namespace Persons.Service.Modules
 			{
 
 				var createPersonModel = this.Bind<CreatePersonModel>();
-				if (!createPersonModel.BirthDate.HasValue)
+				if (createPersonModel.BirthDate > DateTime.Now)
 					return HttpStatusCode.BadRequest;
 
 				var param = new CreatePersonParameter
 				{
-					BirthDate = createPersonModel.BirthDate.Value,
+					BirthDate = createPersonModel.BirthDate,
 					Name = createPersonModel.Name
 				};
 				var result = _commandHandler.Handle<CreatePersonParameter, CreatePersonResult, ICommand<CreatePersonParameter, CreatePersonResult>>(param, _createPersonCommand);
