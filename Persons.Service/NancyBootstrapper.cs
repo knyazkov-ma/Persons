@@ -5,14 +5,15 @@ using Persons.Abstractions.CommandHandlers;
 using Persons.Abstractions.Commands;
 using Persons.Abstractions.Queries;
 using Persons.Abstractions.QueryHandlers;
+using Persons.Abstractions.Repositories;
 using Persons.CommandHandlers;
 using Persons.Commands;
 using Persons.Commands.Parameters;
+using Persons.Entities;
 using Persons.Queries;
 using Persons.Queries.Dto;
 using Persons.QueryHandlers;
 using Persons.Repositories;
-using Persons.Repositories.Interfaces;
 using System;
 using System.Configuration;
 using System.Data;
@@ -38,7 +39,7 @@ namespace Persons.Service
 			var npgsqlConnection = new NpgsqlConnection(connectionString);
 			container.Register<IDbConnection, NpgsqlConnection>(npgsqlConnection);
 
-			container.Register<IPersonRepository, PersonRepository>().AsSingleton();
+			container.Register<IRepository<Person, Guid>, PersonRepository>().AsSingleton();
 
 			container.Register<IQueryHandler, QueryHandler>().AsSingleton();
 			container.Register<ICommandHandler, CommandHandler>().AsSingleton();

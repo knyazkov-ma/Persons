@@ -155,7 +155,6 @@
     <Compile Include="Commands\CreatePersonCommand.cs" />
     <Compile Include="Commands\Parameters\CreatePersonParameter.cs" />
     <Compile Include="Commands\Parameters\CreatePersonResult.cs" />
-    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Mappings\DbEntityMappings.cs" />
     <Compile Include="Mappings\EntityDtoMappings.cs" />
@@ -165,7 +164,6 @@
     <Compile Include="Queries\Dto\PersonDto.cs" />
     <Compile Include="Queries\PersonQuery.cs" />
     <Compile Include="QueryHandlers\QueryHandler.cs" />
-    <Compile Include="Repositories\Interfaces\IPersonRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
   </ItemGroup>
   <ItemGroup>

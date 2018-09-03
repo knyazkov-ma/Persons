@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Persons.Abstractions.Entities;
+using System;
 
 namespace Persons.Entities
 {

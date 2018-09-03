@@ -1,6 +1,6 @@
 ﻿using Dapper;
+using Persons.Abstractions.Repositories;
 using Persons.Entities;
-using Persons.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +8,7 @@ using Z.Dapper.Plus;
 
 namespace Persons.Repositories
 {
-	public class PersonRepository: IPersonRepository
+	public class PersonRepository: IRepository<Person, Guid>
 	{
 		protected readonly IDbConnection _connection;
 

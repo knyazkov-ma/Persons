@@ -1,15 +1,16 @@
 ﻿using AutoMapper;
 using Persons.Abstractions.Queries;
+using Persons.Abstractions.Repositories;
+using Persons.Entities;
 using Persons.Queries.Dto;
-using Persons.Repositories.Interfaces;
 using System;
 
 namespace Persons.Queries
 {
 	public class PersonQuery : IQuery<Guid, PersonDto>
 	{
-		private readonly IPersonRepository _personRepository;
-		public PersonQuery(IPersonRepository personRepository)
+		private readonly IRepository<Person, Guid> _personRepository;
+		public PersonQuery(IRepository<Person, Guid> personRepository)
 		{
 			_personRepository = personRepository;
 		}

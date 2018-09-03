@@ -1,15 +1,16 @@
 ﻿using Persons.Abstractions.Commands;
+using Persons.Abstractions.Repositories;
 using Persons.Commands.Parameters;
 using Persons.Entities;
-using Persons.Repositories.Interfaces;
+using System;
 
 namespace Persons.Commands
 {
 	public class CreatePersonCommand : ICommand<CreatePersonParameter, CreatePersonResult>
 	{
 		
-		private readonly IPersonRepository _personRepository;
-		public CreatePersonCommand(IPersonRepository personRepository)
+		private readonly IRepository<Person, Guid> _personRepository;
+		public CreatePersonCommand(IRepository<Person, Guid> personRepository)
 		{
 			_personRepository = personRepository;
 		}
