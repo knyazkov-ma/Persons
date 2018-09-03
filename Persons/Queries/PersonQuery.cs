@@ -1,4 +1,5 @@
-﻿using Persons.Abstractions.Queries;
+﻿using AutoMapper;
+using Persons.Abstractions.Queries;
 using Persons.Queries.Dto;
 using Persons.Repositories.Interfaces;
 using System;
@@ -16,16 +17,8 @@ namespace Persons.Queries
 		public PersonDto Get(Guid id)
 		{
 			var entity = _personRepository.Find(id);
-			if (entity == null)
-				return null;
-
-			return new PersonDto
-			{
-				Id = entity.Id,
-				Age = entity.Age,
-				BirthDate = entity.BirthDate,
-				Name = entity.Name
-			};
+			
+			return Mapper.Map<PersonDto>(entity);
 		}
 	}
 }

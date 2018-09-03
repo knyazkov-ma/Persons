@@ -28,7 +28,7 @@ namespace Persons.Service
 		{
 			connectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
 			
-			Persons.Bootstrap.Install(connectionString);			
+			Persons.GlobalConfiguration.Configure(connectionString);			
 
 			base.ConfigureApplicationContainer(container);
 		}

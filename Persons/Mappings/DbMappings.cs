@@ -1,16 +1,12 @@
 ﻿using Persons.Entities;
-using Persons.Migrations.Core;
 using Z.Dapper.Plus;
 
-namespace Persons
+namespace Persons.Mappings
 {
-	public static class Bootstrap
+	public static class DbMappings
 	{
-		public static void Install(string connectionString)
+		public static void Configure()
 		{
-			var migrationRunner = new MigrationRunner(connectionString);
-			migrationRunner.Update();
-
 			DapperPlusManager.Entity<Person>()
 				.Table("person")
 				.Map(x => x.Id, "id")
