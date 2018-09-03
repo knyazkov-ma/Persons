@@ -23,7 +23,7 @@ namespace Persons.Repositories
 							from Person
 							where Id = @id";
 
-			return _connection.QueryFirst<Person>(sql, new { id });
+			return _connection.QueryFirstOrDefault<Person>(sql, new { id });
 		}
 
 		public void Insert(Person entity)
