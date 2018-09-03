@@ -164,6 +164,7 @@
     <Compile Include="Queries\Dto\PersonDto.cs" />
     <Compile Include="Queries\PersonQuery.cs" />
     <Compile Include="QueryHandlers\QueryHandler.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
   </ItemGroup>
   <ItemGroup>
