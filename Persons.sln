@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persons.Service", "Persons\Persons.Service.csproj", "{B9670A05-A50E-4ABA-B978-E879E28A15E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persons.Service", "Persons.Service\Persons.Service.csproj", "{B9670A05-A50E-4ABA-B978-E879E28A15E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persons", "Persons.Service\Persons.csproj", "{6AF25096-1C75-49DA-AEFD-8DC46C0427D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persons", "Persons\Persons.csproj", "{6AF25096-1C75-49DA-AEFD-8DC46C0427D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persons.Abstractions", "Persons.Abstractions\Persons.Abstractions.csproj", "{75335959-E273-49F1-9DA7-FC20C67BAFFD}"
 EndProject

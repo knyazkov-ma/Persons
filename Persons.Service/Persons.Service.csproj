@@ -89,7 +89,7 @@
       <Project>{75335959-e273-49f1-9da7-fc20c67baffd}</Project>
       <Name>Persons.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Persons.Service\Persons.csproj">
+    <ProjectReference Include="..\Persons\Persons.csproj">
       <Project>{6af25096-1c75-49da-aefd-8dc46c0427d8}</Project>
       <Name>Persons</Name>
     </ProjectReference>
