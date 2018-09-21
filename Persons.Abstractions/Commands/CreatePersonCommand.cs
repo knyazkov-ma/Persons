@@ -1,9 +1,16 @@
 ﻿using System;
 
-namespace Persons.Commands.Parameters
+namespace Persons.Abstractions.Commands
 {
-	public class CreatePersonParameter
+	public class CreatePersonCommand : Command
 	{
+
+		public class CreatePersonResult
+		{
+			public ResultType Type { get; set; }
+			public Guid Id { get; set; }
+		}
+
 		public DateTime BirthDate { get; set; }
 		public string Name { get; set; }
 

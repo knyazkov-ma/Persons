@@ -3,15 +3,12 @@ using Nancy.TinyIoc;
 using Npgsql;
 using Persons.Abstractions.CommandHandlers;
 using Persons.Abstractions.Commands;
+using Persons.Abstractions.Dto;
 using Persons.Abstractions.Queries;
 using Persons.Abstractions.QueryHandlers;
 using Persons.Abstractions.Repositories;
 using Persons.CommandHandlers;
-using Persons.Commands;
-using Persons.Commands.Parameters;
 using Persons.Entities;
-using Persons.Queries;
-using Persons.Queries.Dto;
 using Persons.QueryHandlers;
 using Persons.Repositories;
 using System;
@@ -41,11 +38,11 @@ namespace Persons.Service
 
 			container.Register<IRepository<Person, Guid>, PersonRepository>().AsSingleton();
 
-			container.Register<IQueryHandler, QueryHandler>().AsSingleton();
-			container.Register<ICommandHandler, CommandHandler>().AsSingleton();
-
-			container.Register<ICommand<CreatePersonParameter, CreatePersonResult>, CreatePersonCommand>().AsSingleton();
-			container.Register<IQuery<Guid, PersonDto>, PersonQuery>().AsSingleton();			
+			container.Register<IQueryHandler<GetPersonQuery, PersonDto>, 
+				GetPersonQueryHandler>().AsSingleton();
+			container.Register<ICommandHandler<CreatePersonCommand, CreatePersonCommand.CreatePersonResult>, 
+				CreatePersonCommandHandler>().AsSingleton();
+									
 
 			base.ConfigureRequestContainer(container, context);
 		}

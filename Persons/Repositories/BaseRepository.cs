@@ -1,6 +1,9 @@
-﻿using Persons.Abstractions.Entities;
+﻿using Dapper;
+using Persons.Abstractions.Entities;
 using Persons.Abstractions.Repositories;
+using System.Collections.Generic;
 using System.Data;
+using Z.Dapper.Plus;
 
 namespace Persons.Repositories
 {
@@ -15,7 +18,16 @@ namespace Persons.Repositories
 			_connection = connection;
 		}
 
-		public abstract TEntity Find(TKey id);
-		public abstract void Insert(TEntity entity);
+		public virtual TEntity Find(TKey id)
+		{
+			string sql = $"select *	from {typeof(TEntity).Name}	where Id = @id";
+
+			return _connection.QueryFirstOrDefault<TEntity>(sql, new { id });
+		}
+
+		public virtual void Insert(TEntity entity)
+		{
+			var result = _connection.BulkInsert(new List<TEntity>() { entity });
+		}
 	}
 }

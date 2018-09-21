@@ -2,9 +2,9 @@
 
 namespace Persons.Abstractions.CommandHandlers
 {
-	public interface ICommandHandler
+	public interface ICommandHandler<TCommand, TResult>
+		where TCommand : Command
 	{
-		TResult Handle<TParam, TResult, TCommand>(TParam param, TCommand command)
-			where TCommand : ICommand<TParam, TResult>;		
+		TResult Execute(TCommand command);		
 	}
 }

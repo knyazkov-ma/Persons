@@ -2,9 +2,9 @@
 
 namespace Persons.Abstractions.QueryHandlers
 {
-	public interface IQueryHandler
+	public interface IQueryHandler<TQuery, TDto>
+		where TQuery : Query<TDto>
 	{
-		TDto Handle<TParam, TDto, TQuery>(TParam param, TQuery query)
-			where TQuery: IQuery<TParam, TDto>;
+		TDto Execute(TQuery query);
 	}
 }

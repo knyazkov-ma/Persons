@@ -2,7 +2,6 @@
 using Nancy.ModelBinding;
 using Persons.Abstractions.CommandHandlers;
 using Persons.Abstractions.Commands;
-using Persons.Commands.Parameters;
 using Persons.Service.Models;
 using System;
 
@@ -10,17 +9,11 @@ namespace Persons.Service.Modules
 {
 	public class CreatePersonModule : NancyModule
 	{
-		private readonly ICommand<CreatePersonParameter, CreatePersonResult> _createPersonCommand;
-		private readonly ICommandHandler _commandHandler;
-
 		public CreatePersonModule(
-			ICommand<CreatePersonParameter, CreatePersonResult> createPersonCommand,
-			ICommandHandler commandHandler)
+			ICommandHandler<CreatePersonCommand, CreatePersonCommand.CreatePersonResult> createPersonCommandHandler)
 			: base("/api/v1/persons")
 		{
-			_createPersonCommand = createPersonCommand;
-			_commandHandler = commandHandler;
-
+			
 			Post["/"] = parameters =>
 			{
 
@@ -28,14 +21,14 @@ namespace Persons.Service.Modules
 				if (createPersonModel.BirthDate > DateTime.Now)
 					return HttpStatusCode.BadRequest;
 
-				var param = new CreatePersonParameter
+				var cmd = new CreatePersonCommand
 				{
 					BirthDate = createPersonModel.BirthDate,
 					Name = createPersonModel.Name
 				};
-				var result = _commandHandler.Handle<CreatePersonParameter, CreatePersonResult, ICommand<CreatePersonParameter, CreatePersonResult>>(param, _createPersonCommand);
+				var result = createPersonCommandHandler.Execute(cmd);
 
-				if (result.Type ==  CreatePersonResultType.UncorrectEntity)
+				if (result.Type ==  ResultType.UncorrectEntity)
 					return HttpStatusCode.UnprocessableEntity;
 
 				return Response.AsText(null)

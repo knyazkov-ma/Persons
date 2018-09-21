@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using Persons.Abstractions.Dto;
 using Persons.Entities;
-using Persons.Queries.Dto;
+
 
 namespace Persons.Mappings
 {
